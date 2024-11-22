@@ -1,18 +1,15 @@
-# Use the official Python slim image
 FROM python:3.9-slim
 
-# Set the working directory
 WORKDIR /app
 
-# Copy project files to the container
+# Copy all files to the working directory
 COPY . .
 
 # Install dependencies
 RUN pip install -r requirements.txt
 
-# Expose the Flask app port
+# Expose the port used by the app
 EXPOSE 5000
 
-# Start the Flask app
+# Start the app with Gunicorn for production
 CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "main:app"]
-
