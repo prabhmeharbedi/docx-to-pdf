@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOCX to PDF Converter</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="card">
+        <h1 class="title">DOCX to PDF Converter</h1>
+        <p class="subtitle">Easily convert your Word documents to professional PDFs. Add a password for enhanced security.</p>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Upload DOCX File</label>
+                <input type="file" name="file" id="file" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Set Password (Optional)</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter a password for the PDF">
+            </div>
+            <button type="submit" class="btn">Upload and Convert</button>
+        </form>
+    </div>
+</body>
+</html>
