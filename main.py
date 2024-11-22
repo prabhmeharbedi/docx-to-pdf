@@ -49,4 +49,4 @@ def add_password(pdf_path, password):
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))  # Dynamically get the port
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=False, host="0.0.0.0", port=port)
