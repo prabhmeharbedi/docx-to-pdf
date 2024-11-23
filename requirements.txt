@@ -1,7 +1,5 @@
-flask
-python-docx
-PyPDF2
-reportlab
-docx2pdf
-gunicorn
-
+Flask==2.3.3          # Flask framework for building the web application
+python-docx==0.8.11   # For reading DOCX files
+PyPDF2==3.0.0         # For PDF manipulation and password protection
+requests==2.31.0      # For making API requests (if used)
+gunicorn==20.1.0      # For running the app in production (optional)
