@@ -13,8 +13,11 @@ RUN apt-get update && apt-get install -y \
     tzdata \
     && rm -rf /var/lib/apt/lists/*
 
-# Set the timezone to UTC (or your preferred timezone)
-RUN ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+# Set the timezone to UTC
+RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo "UTC" > /etc/timezone
+
+# Log versions for debugging
+RUN python3 --version && pip3 --version && libreoffice --version && unoconv --version && qpdf --version
 
 # Set working directory
 WORKDIR /app
@@ -25,8 +28,11 @@ COPY . .
 # Install Python dependencies
 RUN pip3 install -r requirements.txt
 
+# Ensure unoconv is linked properly (fixes some deployment issues)
+RUN ln -s /usr/bin/python3 /usr/bin/python && chmod +x /usr/bin/unoconv
+
 # Expose Flask app port
 EXPOSE 5000
 
-# Run the Flask app
+# Default command to run the application
 CMD ["python3", "main.py"]
