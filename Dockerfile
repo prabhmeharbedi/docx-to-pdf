@@ -1,16 +1,32 @@
-FROM --platform=linux/amd64 python:3.9
+FROM ubuntu:20.04
 
+# Prevent tzdata from prompting for timezone
+ENV DEBIAN_FRONTEND=noninteractive
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    libreoffice \
+    unoconv \
+    qpdf \
+    tzdata \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set the timezone to UTC (or your preferred timezone)
+RUN ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime && dpkg-reconfigure --frontend noninteractive tzdata
+
+# Set working directory
 WORKDIR /app
 
-# Copy all files to the working directory
+# Copy project files
 COPY . .
 
-# Install dependencies
-RUN pip install -r requirements.txt
+# Install Python dependencies
+RUN pip3 install -r requirements.txt
 
-# Expose the port used by the app
+# Expose Flask app port
 EXPOSE 5000
 
-# Start the app with Gunicorn for production
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "main:app"]
+# Run the Flask app
+CMD ["python3", "main.py"]
