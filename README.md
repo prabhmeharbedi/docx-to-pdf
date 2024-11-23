@@ -28,7 +28,7 @@ A user-friendly web application for converting `.docx` files to password-protect
 - Upload `.docx` files and convert them into PDF files.
 - Optional password protection for enhanced security.
 - Intuitive and responsive web interface.
-- Deployed and live at: [https://docx-to-pdf-w4nr.onrender.com](https://docx-to-pdf-w4nr.onrender.com).
+- Deployed and live at: [https://docx-to-pdf-1-ooea.onrender.com](https://docx-to-pdf-1-ooea.onrender.com).
 - Dockerized for portability and scalability: [Docker Hub Repository](https://hub.docker.com/r/prabhmeharbedi/docx-to-pdf).
 
 ---
@@ -44,7 +44,7 @@ A user-friendly web application for converting `.docx` files to password-protect
 ## Getting Started
 
 ### 1. Access the App Online
-Visit the live application at: [https://docx-to-pdf-w4nr.onrender.com](https://docx-to-pdf-w4nr.onrender.com).
+Visit the live application at: [https://docx-to-pdf-1-ooea.onrender.com](https://docx-to-pdf-1-ooea.onrender.com).
 
 ### 2. Run Locally
 
@@ -91,7 +91,7 @@ Visit the live application at: [https://docx-to-pdf-w4nr.onrender.com](https://d
 ---
 
 ## Deployment
-This project is deployed on Render.com and can be accessed at: [https://docx-to-pdf-w4nr.onrender.com](https://docx-to-pdf-w4nr.onrender.com).
+This project is deployed on Render.com and can be accessed at: [https://docx-to-pdf-1-ooea.onrender.com](https://docx-to-pdf-1-ooea.onrender.com).
 
 For deploying with Docker:
 1. Build the Docker image:
